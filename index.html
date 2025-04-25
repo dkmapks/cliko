@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skarbonka</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Zarobków Influencera</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Skarbonka</h1>
-        <div class="balance">
-            <p>Obecny stan skarbonki: <span id="balance">0.00</span> zł</p>
-        </div>
-        <div class="controls">
-            <input type="number" id="amount" placeholder="Wpisz kwotę (0.01 - 500)" step="0.01" min="0.01" max="500">
-            <button id="addButton">Dodaj do skarbonki</button>
-        </div>
-        <button id="saveButton">Zapisz stan</button>
-        <button id="loadButton">Wczytaj stan</button>
-    </div>
-    <script src="script.js"></script>
+  <div class="container">
+    <h1>Kalkulator Zarobków Influencera</h1>
+    <form id="earningsForm">
+      <h2>YouTube</h2>
+      <label>Wyświetlenia miesięcznie:</label>
+      <input type="number" id="ytViews" value="100000">
+      <label>Zarobek za 1000 wyświetleń (PLN):</label>
+      <input type="number" id="ytRate" value="4">
+
+      <h2>TikTok</h2>
+      <label>Wyświetlenia miesięcznie:</label>
+      <input type="number" id="ttViews" value="200000">
+      <label>Zarobek za 1000 wyświetleń (PLN):</label>
+      <input type="number" id="ttRate" value="1.5">
+
+      <h2>Instagram</h2>
+      <label>Liczba sponsorowanych postów:</label>
+      <input type="number" id="igPosts" value="5">
+      <label>Zarobek za 1 post (PLN):</label>
+      <input type="number" id="igRate" value="800">
+
+      <h2>Dodatkowy przychód (PLN miesięcznie):</h2>
+      <input type="number" id="extraIncome" value="500">
+
+      <h2>Podatek dochodowy (%):</h2>
+      <input type="number" id="tax" value="19">
+
+      <button type="button" onclick="calculateEarnings()">Oblicz zarobki</button>
+    </form>
+
+    <div id="results" class="results"></div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
