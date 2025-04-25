@@ -52,8 +52,19 @@
         <input type="number" id="concertCut" value="30">
       </div>
 
+      <h2>Koszty miesięczne</h2>
+      <label>Sprzęt, montaż, marketing itp. (PLN):</label>
+      <input type="number" id="monthlyCosts" value="0">
+
       <h2>Podatek dochodowy (%):</h2>
       <input type="number" id="tax" value="19">
+
+      <h2>Wybierz walutę:</h2>
+      <select id="currency">
+        <option value="PLN" selected>PLN</option>
+        <option value="EUR">EUR</option>
+        <option value="USD">USD</option>
+      </select>
 
       <button type="button" onclick="calculateEarnings()">Oblicz zarobki</button>
     </form>
