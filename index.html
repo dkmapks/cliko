@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>Kalkulator Zarobków Influencera</h1>
+    <h1>Kalkulator Zarobków Influencera + Artysty</h1>
     <form id="earningsForm">
       <h2>YouTube</h2>
       <label>Wyświetlenia miesięcznie:</label>
@@ -30,6 +30,27 @@
 
       <h2>Dodatkowy przychód (PLN miesięcznie):</h2>
       <input type="number" id="extraIncome" value="500">
+
+      <h2>Czy współpracujesz z wytwórnią?</h2>
+      <select id="withLabel" onchange="toggleLabelFields()">
+        <option value="no">Nie</option>
+        <option value="yes">Tak</option>
+      </select>
+
+      <div id="labelFields" style="display:none;">
+        <h3>Zarobki artystyczne:</h3>
+        <label>Liczba sprzedanych płyt:</label>
+        <input type="number" id="albumsSold" value="0">
+        <label>Zarobek za płytę (PLN):</label>
+        <input type="number" id="albumPrice" value="50">
+        <label>Procent oddawany wytwórni z płyt (%):</label>
+        <input type="number" id="albumCut" value="20">
+
+        <label>Zarobki z koncertów (PLN miesięcznie):</label>
+        <input type="number" id="concerts" value="0">
+        <label>Procent oddawany wytwórni z koncertów (%):</label>
+        <input type="number" id="concertCut" value="30">
+      </div>
 
       <h2>Podatek dochodowy (%):</h2>
       <input type="number" id="tax" value="19">
